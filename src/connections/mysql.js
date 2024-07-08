@@ -10,8 +10,8 @@ var datasource = new typeorm.DataSource({
   username: config.database.username,
   password: config.database.password,
   database: config.database.name,
-  synchronize: false,
-  logging: false,
+  synchronize: true,
+  logging: true,
   connectionLimit: 1000,
   connectTimeout: 60 * 60 * 1000,
   acquireTimeout: 60 * 60 * 1000,
@@ -21,10 +21,7 @@ var datasource = new typeorm.DataSource({
 datasource
   .initialize()
   .then(function () {
-    console.log(
-      config.server.port + "Database Connected!, ",
-      config.database.name
-    );
+    console.log("Database Connected!, ", config.database.name);
   })
   .catch(function (err) {
     console.log("Error: ", err);

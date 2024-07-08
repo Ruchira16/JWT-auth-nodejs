@@ -2,6 +2,10 @@
     "server" : {
         "port" : 8055
     },
+    "jwtConfig": {
+        "JWT_SECRET_KEY": "ADMIN_SECRET",
+        "JWT_EXPIRY_TIME": "1h"
+    },
     "database" : {
         "host" : "localhost",
         "port" : 3306,
